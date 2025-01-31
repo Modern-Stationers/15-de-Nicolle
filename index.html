@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Alejandro & Valentina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#countdown">Countdown</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cover Image -->
+    <section class="cover">
+        <img src="images/couple.jpeg" alt="Bride and Groom">
+    </section>
+
+    <!-- Welcome Message -->
+    <section id="welcome">
+        <h1>We're getting married!</h1>
+        <h2>Alejandro & Valentina</h2>
+        <p>...And we would love to have the honor of having your precious presence.</p>
+        <audio controls autoplay loop>
+            <source src="music/song.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <!-- Event Details -->
+    <section id="details">
+        <h2>Event Details</h2>
+        <p><strong>📅 Date:</strong> December 15, 2025</p>
+        <p><strong>⏰ Time:</strong> 4:00 PM</p>
+        <p><strong>📍 Ceremony:</strong> St. Mary's Church</p>
+        <p><strong>🎉 Reception:</strong> Grand Ballroom</p>
+        <a href="https://maps.google.com" target="_blank" class="btn">View on Google Maps</a>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section id="countdown">
+        <h2>Countdown to Our Big Day</h2>
+        <p id="timer"></p>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery">
+        <h2>Our Moments</h2>
+        <div class="carousel">
+            <img src="images/photo1.jpeg" alt="Photo 1">
+            <img src="images/photo2.jpeg" alt="Photo 2">
+            <img src="images/photo3.jpeg" alt="Photo 3">
+        </div>
+    </section>
+
+    <!-- RSVP Form -->
+    <section id="rsvp">
+        <h2>Confirm Your Attendance</h2>
+        <form id="rsvp-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" required>
+            
+            <label for="message">Message (Optional):</label>
+            <textarea id="message"></textarea>
+            
+            <button type="submit">Submit RSVP</button>
+        </form>
+        <p id="rsvp-message"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
