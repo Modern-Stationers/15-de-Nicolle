@@ -78,48 +78,6 @@ function toggleMenu() {
     menu.classList.toggle("active");
 }
 
-function openModal() {
-    document.getElementById("musicModal").style.display = "flex";
-}
-function closeModal() {
-    document.getElementById("musicModal").style.display = "none";
-}
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbx3Vdv2HuEooDLVb2vsmv1hPL1zu5qrLzQ2vRvVvRlgH3ia8tCTu5FxNFYLI9IojNl7Jg/exec";
-const form = document.getElementById("musicForm");
-const loadingMessage = document.getElementById("loadingMessage"); // Seleccionar el mensaje de carga
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // Mostrar el mensaje de "Cargando respuestas..."
-  loadingMessage.style.display = "block";
-
-  var formData = new FormData(form);
-  var song = document.getElementById("song").value;
-  var artist = document.getElementById("artist").value;
-  var youtube = document.getElementById("youtube").value;
-
-  // Verificar y agregar campos al formData
-  formData.append("song", song ? song : "No especificado");
-  formData.append("artist", artist ? artist : "No especificado");
-  formData.append("youtube", youtube ? youtube : "No proporcionado");
-
-  fetch(scriptURL, { method: "POST", body: formData })
-    .then((response) => {
-      alert("¡Hecho! Sugerencia enviada con éxito.");
-      form.reset();  // Limpiar el formulario después de enviar
-      closeModal();  // Cerrar el modal después del envío exitoso
-    })
-    .catch((error) => {
-      alert("Error: Algo salió mal, por favor intenta de nuevo.");
-    })
-    .finally(() => {
-      // Ocultar el mensaje de "Cargando respuestas..." cuando se reciba la respuesta (éxito o error)
-      loadingMessage.style.display = "none";
-    });
-});
-
 function openAttendanceModal() {
     document.getElementById("attendanceModal").style.display = "flex";
 }
