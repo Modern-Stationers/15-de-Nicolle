@@ -3,82 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation | Alejandro & Valentina</title>
+    <title>Invitación de XV años | Nicolle Sthefany</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cookie&family=Belleza&family=Lobster+Two&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Header Section -->
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <h1>Mis XV años - Nicolle Sthefany</h1>
+    </header>
+
     <!-- Navigation Menu -->
-    <nav>
+    <nav id="nav-menu">
         <ul>
-            <li><a href="#welcome">Welcome</a></li>
-            <li><a href="#details">Details</a></li>
-            <li><a href="#countdown">Countdown</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#cover">Inicio</a></li>
+            <li><a href="#agendar">Fecha</a></li>
+            <li><a href="#countdown">Cuenta regresiva</a></li>
+            <li><a href="#gallery">Galería</a></li>
+            <li><a href="#details">Recepción</a></li>
+            <li><a href="#clothes">Código de vestimenta</a></li>
+            <li><a href="#music-rec">Playlist</a></li>
+            <li><a href="#gift">Regalos</a></li>
+            <li><a href="#attendance-section">Confirmar asistencia</a></li>
         </ul>
     </nav>
 
     <!-- Cover Image -->
-    <section class="cover">
-        <img src="images/couple.jpeg" alt="Bride and Groom">
+    <section id="cover" class="cover">
+        <img src="Images/couple.png" alt="Bride and Groom">
     </section>
-
+    
     <!-- Welcome Message -->
     <section id="welcome">
-        <h1>We're getting married!</h1>
-        <h2>Alejandro & Valentina</h2>
-        <p>...And we would love to have the honor of having your precious presence.</p>
+        <h1>Nicolle Sthefany</h1>
+        <h2>Mis XV años</h2>
+    </section>
+    <hr>
+
+    <!-- Music -->
+    <section id="music">
+        <h1>Disfruta la música</h1>
+        <p>Reproduce la melodía mientras te revelamos cada detalle de este día tan especial</p>
         <audio controls autoplay loop>
-            <source src="music/song.mp3" type="audio/mp3">
+            <source src="Music/song.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </section>
+    <hr>
 
-    <!-- Event Details -->
-    <section id="details">
-        <h2>Event Details</h2>
-        <p><strong>📅 Date:</strong> December 15, 2025</p>
-        <p><strong>⏰ Time:</strong> 4:00 PM</p>
-        <p><strong>📍 Ceremony:</strong> St. Mary's Church</p>
-        <p><strong>🎉 Reception:</strong> Grand Ballroom</p>
-        <a href="https://maps.google.com" target="_blank" class="btn">View on Google Maps</a>
+   <!-- Frase -->
+   <section id="frase">
+       <div class="content-wrapper">
+           <p>Cómo no recordar que hace casi 15 años nació la flor más hermosa de este hogar.</p>
+           <p>Pronto, nuestra niña se convertirá en mujercita, llenos de alegría y dando gracias a Dios por recibir tan espléndida bendición  queremos invitarte a celebrar su cumpleaños número 15.</p>
+           <p>Atentamente,</p>
+           <h2>Andrea Herrán y Andrés Páez</h2>
+       </div>
+   </section>
+   <hr>
+    
+    <!-- Agendar evento -->
+    <section id="agendar">
+        <p>Un día mágico, el comienzo de una nueva historia.</p>
+        <img src="Video/Gif.gif" alt="GIF de celebración" class="centered-gif" style="width:300px; height:auto;">
+        <a href="https://calendar.app.google/W3hYVLfBm4WbAUap9" target="_blank" class="btn" style="margin-top: 25px">Agendar</a>
     </section>
+    <hr>
 
     <!-- Countdown Timer -->
     <section id="countdown">
-        <h2>Countdown to Our Big Day</h2>
-        <p id="timer"></p>
+        <h2>Cuenta regresiva</h2>
+        <div id="timer">
+            <div class="time-unit">
+                <span class="number" id="days"></span>
+                <span class="label">días</span>
+            </div>
+            <span class="heart">❤️</span> <!-- Corazón entre las unidades -->
+            <div class="time-unit">
+                <span class="number" id="hours"></span>
+                <span class="label">horas</span>
+            </div>
+            <span class="heart">❤️</span> <!-- Corazón entre las unidades -->
+            <div class="time-unit">
+                <span class="number" id="minutes"></span>
+                <span class="label">minutos</span>
+            </div>
+            <span class="heart">❤️</span> <!-- Corazón entre las unidades -->
+            <div class="time-unit">
+                <span class="number" id="seconds"></span>
+                <span class="label">segundos</span>
+            </div>
+        </div>
     </section>
+    <hr>
 
     <!-- Photo Gallery -->
     <section id="gallery">
-        <h2>Our Moments</h2>
-        <div class="carousel">
-            <img src="images/photo1.jpeg" alt="Photo 1">
-            <img src="images/photo2.jpeg" alt="Photo 2">
-            <img src="images/photo3.jpeg" alt="Photo 3">
+        <h2>Galería de sueños</h2>
+        <div class="carousel-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel">
+                <div class="carousel-item"><img src="Images/photo1.jpeg" alt="Photo 1"></div>
+                <div class="carousel-item"><img src="Images/photo2.jpeg" alt="Photo 2"></div>
+                <div class="carousel-item"><img src="Images/photo3.jpeg" alt="Photo 3"></div>
+                <div class="carousel-item"><img src="Images/photo4.jpeg" alt="Photo 4"></div>
+                <div class="carousel-item"><img src="Images/photo5.jpeg" alt="Photo 5"></div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="carousel-indicators">
+            <span class="dot" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+            <span class="dot" onclick="setSlide(3)"></span>
+            <span class="dot" onclick="setSlide(4)"></span>
+        </div>
+        <p>Cada imagen captura la ilusión y la magia de este momento tan esperado.</p>
+        <p>Acompáñame a descubrir la belleza de una nueva etapa.</p>
+    </section>
+    <hr>
+
+    <!-- Event Details -->
+    <section id="details">
+        <h1>Recepción</h1>
+        <img src="Video/gif1.gif" alt="GIF de celebración" class="centered-gif" style="width:200px; height:auto;">
+        <p>6:30 P.M.</p>
+        <p>Salón Social Barrio El Descanso</p>
+        <p class="adjusted-margin">Dirección:</p>
+        <p class="larger-margin">Carrera 78L No. 45-25</p>
+        <a href="https://maps.app.goo.gl/xsUoYJK1oLG9QB7G6" target="_blank" class="btn">Cómo llegar</a>
+    </section>
+    <hr>
+
+    <!-- Código de vestimenta -->
+    <section id="clothes">
+        <h1>Código de vestimenta</h1>
+        <img src="Video/gif2.gif" alt="GIF de celebración" class="centered-gif" style="width:200px; height:auto;">
+        <p>Caballeros elegantes</p>
+        <img src="Video/gif3.gif" alt="GIF de celebración" class="centered-gif" style="width:200px; height:auto;">
+        <p>Damas divinas</p>
+    </section>
+    <hr>
+
+     <!-- Music Recommendation Section -->
+    <section id="music-rec">
+        <h1>¡Ayúdanos a crear la Playlist perfecta!</h1>
+        <img src="Video/gif4.gif" alt="GIF de celebración" class="centered-gif" style="width:200px; height:auto;">
+        <h2>¿Qué canción no puede faltar en la celebración?</h2>
+        <p>¡Queremos escuchar tus recomendaciones para que todos disfruten de la música!</p>
+        <button class="music-button" onclick="openModal()">Sugerir música</button>
+    
+        <div id="musicModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Comparte tu canción favorita</h3>
+                <form id="musicForm">
+                    <input type="text" id="song" placeholder="Nombre de la canción" required>
+                    <input type="text" id="artist" placeholder="Intérprete">
+                    <input type="url" id="youtube" placeholder="Enlace de YouTube (opcional)">
+                    <button type="submit" class="submit-button">Enviar sugerencia</button>
+                </form>
+                <p id="loadingMessage" style="display: none;">Cargando respuestas...</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Regalo -->
+    <section id="gift">
+        <h1>El mejor regalo: ¡tu presencia!</h1>
+        <img src="Video/gif5.gif" alt="GIF de celebración" class="centered-gif" style="width:230px; height:auto;">
+        <p>Para mí, lo más valioso es compartir este día tan especial contigo.</p>
+        <p>Sin embargo, si deseas ofrecerme un obsequio, una lluvia de sobres será bien recibida.</p>
+    </section>
+    <hr>
+
+    <!-- Sección de Confirmación de Asistencia -->
+    <section id="attendance-section">
+        <h1>¡Nos encantaría contar contigo!</h1>
+        <img src="Video/gif6.gif" alt="GIF de celebración" class="centered-gif" style="width:170px; height:auto;">
+        <button class="attendance-button" onclick="openAttendanceModal()">Confirmar asistencia</button>
+        <h2>¡Te esperamos!</h2>
+    
+        <div id="attendanceModal" class="attendance-modal">
+            <div class="attendance-modal-content">
+                <span class="attendance-close" onclick="closeAttendanceModal()">&times;</span>
+                <h3>Confirmación de asistencia – Mis XV años</h3>
+                <p>Por favor, confirma tu asistencia para que podamos hacer los arreglos necesarios.</p>
+                <p>Completa este formulario con la información requerida. Tu respuesta nos ayudará a planificar el evento y asegurarnos de que todos los invitados se sientan cómodos.</p>
+                <p>¡Gracias por ser parte de nuestra celebración!</p><br>
+    
+                <form id="attendanceForm">
+                    <label class="form-label">¿Confirmas tu asistencia de manera individual o grupal?</label><br>
+                    <select id="attendanceType" required>
+                        <option value="individual">Confirmación individual</option>
+                        <option value="grupal">Confirmación grupal</option>
+                    </select><br><br>
+                
+                    <label class="form-label">Nombre completo del asistente principal</label><br>
+                    <input type="text" id="mainGuest" required><br><br>
+                
+                    <div id="groupDetails" style="display: none;">
+                        <label class="form-label">Número total de asistentes</label><br>
+                        <input type="number" id="groupSize"><br><br>
+                
+                        <label class="form-label">Nombres completos de los acompañantes</label><br>
+                        <textarea id="guestNames"></textarea><br><br>
+                    </div>
+                
+                    <label class="form-label">¿Tienes alguna restricción alimentaria o alergias?</label><br>
+                    <textarea id="dietaryRestrictions"></textarea><br><br>
+                
+                    <label class="form-label">Felicitaciones para la quinceañera</label><br>
+                    <textarea id="wishes"></textarea><br><br>
+                
+                    <p id="loadingMessage1" style="display: none;">Cargando respuestas...</p> <!-- Mensaje de cargando respuestas -->
+                    <button type="submit" class="submit-button">Enviar Confirmación</button>
+                </form>                           
+            </div>
         </div>
     </section>
 
-    <!-- RSVP Form -->
-    <section id="rsvp">
-        <h2>Confirm Your Attendance</h2>
-        <form id="rsvp-form">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" required>
-            
-            <label for="guests">Number of Guests:</label>
-            <input type="number" id="guests" required>
-            
-            <label for="message">Message (Optional):</label>
-            <textarea id="message"></textarea>
-            
-            <button type="submit">Submit RSVP</button>
-        </form>
-        <p id="rsvp-message"></p>
-    </section>
-
     <script src="script.js"></script>
+    
 </body>
 </html>
